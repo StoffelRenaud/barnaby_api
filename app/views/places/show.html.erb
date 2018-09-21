@@ -1,0 +1,10 @@
+<%= @place.name %>
+
+<% content_for(:after_js) do %>
+  <script>
+    $(document).ready(function() {
+      console.log(<%= raw @place_coordinates.to_json %>);
+      // alert('Bienvenue <%= @place.name %>');
+    });
+  </script>
+<% end %>
