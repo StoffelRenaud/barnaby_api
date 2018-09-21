@@ -29,7 +29,6 @@ class PlacesController < ApplicationController
   end
 
   def update
-    raise
   end
 
   private
