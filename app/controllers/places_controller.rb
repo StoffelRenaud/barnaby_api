@@ -1,6 +1,6 @@
 class PlacesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_place, only: [:show, :edit]
+  before_action :set_place, only: [:show, :edit, :update]
 
   def index
     @places = Place.where.not(latitude: nil)
@@ -29,12 +29,18 @@ class PlacesController < ApplicationController
   end
 
   def update
+    @place.update(params_place)
+    if @place.save
+      redirect_to places_path
+    else
+      render :edit
+    end
   end
 
   private
 
   def params_place
-    params.require(:place).permit(:name, :urlphoto, :distance, :address, :latitude, :longitude)
+    params.require(:place).permit(:name, :urlphoto, :distance, :address, :latitude, :longitude, :content)
   end
 
   def set_place

@@ -8,6 +8,7 @@
             <div class="index-card-left">
               <h4><%= place.name %></h4>
               <p><%= place.address %></p>
+              <p><%= truncate(place.content, length: 200) %></p>
             </div>
             <div class="index-card-right">
               <%= link_to edit_place_path(place) do %>

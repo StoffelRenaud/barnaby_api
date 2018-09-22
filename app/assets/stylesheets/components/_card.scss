@@ -12,6 +12,7 @@
   flex: 0 0 90%;
   display: flex;
   flex-direction: column;
+  padding-right: 10px;
   h4 {
     font-size: lighter;
   }
@@ -19,13 +20,14 @@
 
 .index-card-right {
   flex: 0 0 10%;
+  padding-right: 10px;
   a {
-    transition: 0.5s;
-    font-size: 1.5em;
+    transition: 0.4s;
+    font-size: 1.4em;
     &:hover {
       color: $orange;
-      font-size: 1.8em;
-      transition: 0.5s;
+      font-size: 1.6em;
+      transition: 0.4s;
     }
   }
 }
