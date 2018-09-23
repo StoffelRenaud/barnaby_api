@@ -1,8 +1,15 @@
-<%= simple_form_for @place do |f| %>
-  <%= f.input  :name, placeholder: 'What is its name' %>
-  <div id="place_address">
-    <%= f.input  :address, placeholder: 'Enter the address' %>
+<%= render 'shared/navbar' %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-offset-2 col-xs-8">
+      <%= simple_form_for @place do |f| %>
+        <%= f.input  :name, placeholder: 'What is its name' %>
+        <div id="place_address">
+          <%= f.input  :address, placeholder: 'Enter the address' %>
+        </div>
+        <%= f.input  :content, placeholder: 'Add a description' %>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
   </div>
-  <%= f.input  :content, placeholder: 'Add a description' %>
-  <%= f.button :submit %>
-<% end %>
+</div>
