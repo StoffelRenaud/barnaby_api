@@ -1,6 +1,8 @@
 <%= simple_form_for @place do |f| %>
   <%= f.input  :name %>
-  <%= f.input  :address %>
+  <div id="place_address">
+    <%= f.input  :address %>
+  </div>
   <%= f.input  :content %>
   <%= f.button :submit %>
 <% end %>

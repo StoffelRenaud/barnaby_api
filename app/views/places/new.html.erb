@@ -1,6 +1,8 @@
 <%= simple_form_for @place do |f| %>
   <%= f.input  :name, placeholder: 'What is its name' %>
-  <%= f.input  :address, placeholder: 'Enter the address' %>
-  <%= f.input  :content, placeholder: 'Add a description'  %>
+  <div id="place_address">
+    <%= f.input  :address, placeholder: 'Enter the address' %>
+  </div>
+  <%= f.input  :content, placeholder: 'Add a description' %>
   <%= f.button :submit %>
 <% end %>
