@@ -3,7 +3,12 @@ class PlacesController < ApplicationController
   before_action :set_place, only: [:show, :edit, :update]
 
   def index
-    @places = Place.where.not(latitude: nil)
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR address ILIKE :query"
+      @places = Place.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @places = Place.where.not(latitude: nil)
+    end
     @markers = @places.map do |place|
     {
       lat: place.latitude,

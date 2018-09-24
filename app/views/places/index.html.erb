@@ -1,22 +1,31 @@
 <div class="index-main-container">
-  <div class="row">
-    <div class="col-xs-12">
-      <%= render 'shared/navbar' %>
-      <h2>All places</h2>
-      <% @places.each do |place| %>
-        <div class="index-main-card">
-          <div class="index-card-left">
-            <h4><%= place.name %></h4>
-            <p><%= place.address %></p>
-            <p><%= truncate(place.content, length: 200) %></p>
+  <div class="index-places-container">
+    <div class="row">
+      <div class="col-xs-12">
+        <%= render 'shared/navbar' %>
+        <h2>All places</h2>
+        <%= form_tag places_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a place"
+          %>
+        <% end %>
+        <% @places.each do |place| %>
+          <div class="index-main-card">
+            <div class="index-card-left">
+              <h4><%= place.name %></h4>
+              <p><%= place.address %></p>
+              <p><%= truncate(place.content, length: 200) %></p>
+            </div>
+            <div class="index-card-right">
+              <%= link_to edit_place_path(place) do %>
+                <i class="far fa-edit"></i>
+              <% end %>
+            </div>
           </div>
-          <div class="index-card-right">
-            <%= link_to edit_place_path(place) do %>
-              <i class="far fa-edit"></i>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
   <div id="map" data-markers="<%= @markers.to_json %>"></div>
