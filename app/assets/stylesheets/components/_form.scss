@@ -1,0 +1,42 @@
+//New Place form
+#new_place {
+  font-weight: lighter;
+}
+
+.form-group.string.optional.place_name input {
+  border: 0;
+  transition: 0.3s;
+  &:hover {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    transition: 0.3s;
+  }
+}
+
+.form-control.string.optional {
+  border: 0;
+  transition: 0.3s;
+  &:hover {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    transition: 0.3s;
+  }
+}
+
+.form-control.text.optional {
+  border: 0;
+  transition: 0.3s;
+  height: 100px;
+  &:hover {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    transition: 0.3s;
+  }
+}
+
+//Edit Place Form
+.form-control.is-valid.string.optional {
+  border: 0;
+  transition: 0.3s;
+  &:hover {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    transition: 0.3s;
+  }
+}

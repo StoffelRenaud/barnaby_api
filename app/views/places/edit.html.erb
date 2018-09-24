@@ -1,8 +1,24 @@
-<%= simple_form_for @place do |f| %>
-  <%= f.input  :name %>
-  <div id="place_address">
-    <%= f.input  :address %>
+<%= render 'shared/navbar' %>
+<div class="form-main-container">
+  <h2>Edit <%= @place.name  %></h2>
+  <div class="row">
+    <div class="col-xs-offset-2 col-xs-8">
+      <%= simple_form_for @place do |f| %>
+        <%= f.input  :name %>
+        <div id="place_address">
+          <%= f.input  :address %>
+        </div>
+        <%= f.input  :content %>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
   </div>
-  <%= f.input  :content %>
-  <%= f.button :submit %>
+</div>
+
+<%= content_for(:after_js) do %>
+  <script>
+    $(document).ready(function() {
+      alert('Bienvenue <%= @place.name %>');
+    });
+  </script>
 <% end %>
